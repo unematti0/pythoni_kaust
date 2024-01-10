@@ -3,8 +3,33 @@ import random
 #Mattias Elmers IT-23
 #18.12.2023
 
+import datetime
+paev = (datetime.datetime.now().day)
 
 
+
+
+#tahvli juurde
+fail= open("nimekiri.txt", encoding="UTF-8")
+nr = 1
+for nimi in fail:  
+    if nr == paev:
+        print(nimi, end="") 
+    nr += 1
+
+
+
+
+
+
+
+
+
+
+
+
+input()
+#jukebox
 siiamidagi = input("Sisesta faili nimi: ")
 fail = open(siiamidagi, encoding="UTF-8")
 print("muusikapalade valik:")
