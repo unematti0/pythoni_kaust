@@ -4,25 +4,76 @@ import random
 #Kodutöö
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#13. Ülesanne
+try:
+    arv = input("Sisesta arv: ")
+    if arv == "" or arv == "0":
+        print("Vigane sisend")
+    elif int(arv) % 2 == 0:
+        print("Arv on paaris")
+    else:
+        print("Arv on paaritu")
+except ValueError:
+    print("Vigane sisend") 
+
+
+
+
+
+
 #11. Ülesanne
 
+def loo_salakeel():
+    valik = input("Kas soovid luua salakeelt (sisesta 1) või tõlkida salakeelt (sisesta 2): ")
+    if valik.lower() == "1":
+         tavaline_sona = input("Sisesta tavaline sõna: ")
 
-tähestik = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j","k","l","m","n","o","p","q","r","s","t","u","v","w","x", "y", "z", "ä", "ö", "ü", "õ"]
+         salakeel = ""
+         for i in tavaline_sona:
+             if i.isalpha():
+                 salakeel += i + 'i' + i
+             else:
+                 salakeel += i
 
-def salasta(tavakiri, sala_võti):
-    salakiri = ""
-    for i in tavakiri:
-        if i.isalpha():
-            i = i.lower()
-            i_indeks = tähestik.index(i)
-            uus_indeks = (i_indeks + sala_võti) % 26
-            sala_täht = tähestik[uus_indeks].upper()
-        else:
-            sala_täht = i
+         print("Salakeel:", salakeel)
+    elif valik.lower() == "2":
+         salakeelne_sona = input("Sisesta salakeelne sõna: ")
 
-        salakiri += sala_täht
+         tavaline_sona = ""
+         for i in range(0, len(salakeelne_sona), 3):
+             tavaline_sona += salakeelne_sona[i]
 
-    print("sinu salakiri on: " + salakiri)
+         print("Tõlgitud sõna:", tavaline_sona)
+    else:
+         print("Vigane valik. Palun sisesta 1 või 2.")
+
+
+loo_salakeel()
+
+
+
+
+
+
+
+
 
 
 
@@ -42,19 +93,7 @@ print(emaili_kontroll("email"))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+input()
 #7. Ülesanne
 
 def arvutus(küsimus):
